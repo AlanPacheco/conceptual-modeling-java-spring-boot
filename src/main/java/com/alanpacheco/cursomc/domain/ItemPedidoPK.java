@@ -6,13 +6,16 @@ import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Embeddable
 public class ItemPedidoPK implements Serializable{
 	private static final long serialVersionUUID = 1L;
 	
 	@ManyToOne
 	@JoinColumn(name="produto_id")
-	private Produto produto;
+		private Produto produto;
 	
 	@ManyToOne
 	@JoinColumn(name="pedido_id")
