@@ -31,7 +31,6 @@ public class Pedido implements Serializable{
 	
 	@ManyToOne
 	@JoinColumn(name="cliente_id")
-	@JsonManagedReference
 	private Cliente cliente;
 	
 	@ManyToOne
@@ -39,7 +38,6 @@ public class Pedido implements Serializable{
 	private Endereco enderecoDeEntrega;
 	
 	@OneToOne(cascade=CascadeType.ALL, mappedBy="pedido")
-	@JsonManagedReference
 	private Pagamento pagamento;
 	
 	@OneToMany(mappedBy="id.pedido")
